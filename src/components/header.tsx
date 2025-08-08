@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 
 export default function Header(){
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+
   const navItems = [
     {label:'Inicio', id:'inicio', to:'#'},
     {label:'Servicios', id:'servicios', to:'#'},
@@ -20,7 +20,7 @@ export default function Header(){
           <img src={inwardL} alt="Logo" className='h-8 lg:h-10 w-auto'/>
         </div>
         {/* Desktop Nav */}
-        <div className='mr-7 hidden md:block'>
+        <div className=' hidden md:block'>
           <ul className='flex list-none space-x-8 items-center'>
             {navItems.map((item) => (
               <Link key={item.id} to={item.to} className='text-gray-700 cursor-pointer hover:text-[#D10046] transition-colors'>{item.label}</Link>
