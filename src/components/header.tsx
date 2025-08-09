@@ -1,10 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import inwardL from '../assets/inwardL.png'
 import { Menu, X } from 'lucide-react'
 import { Link } from 'react-router'
 
 export default function Header(){
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [])
 
   const navItems = [
     {label:'Inicio', id:'inicio', to:'#'},
@@ -15,24 +24,35 @@ export default function Header(){
 
   return(
     <>
-      <div className='flex items-center bg-gray-100/50 justify-between border-b-1 border-gray-200 shadow-md backdrop-blur-md sticky top-0 z-50 p-3'>
+      <div className={`flex items-center bg-white justify-between backdrop-blur-md sticky top-0 z-50 px-4 lg:px-8 h-16 lg:h-20 transition-all duration-300${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
         <div className='flex-shrink-0 ml-1'>
           <img src={inwardL} alt="Logo" className='h-8 lg:h-10 w-auto'/>
         </div>
         {/* Desktop Nav */}
-        <div className=' hidden md:block'>
-          <ul className='flex list-none space-x-8 items-center'>
+        {/* <div className='hidden md:block'> */}
+          {/* <ul className='flex list-none space-x-8 items-center'>
             {navItems.map((item) => (
               <Link key={item.id} to={item.to} className='text-gray-700 cursor-pointer hover:text-[#D10046] transition-colors'>{item.label}</Link>
             ))}
-          </ul>
+          </ul> */}
+        {/* </div> */}
+
+        <div className='hidden md:flex md:block space-x-8'>
+            <ul className='flex list-none space-x-8 items-center'>
+              {navItems.map((item) => (
+                <Link key={item.id} to={item.to} className='text-gray-700 cursor-pointer hover:text-[#D10046] transition-colors'>{item.label}</Link>
+              ))}
+            </ul>
+            <button className='bg-[#D10046] hover:bg-[#D10046]/90 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200 cursor-pointer'>
+              Agendar Diagnóstico
+            </button>
         </div>
 
-        <div className='mr-3 hidden md:block'>
+        {/* <div className='mr-3 hidden md:block'>
           <button className='bg-[#D10046] hover:bg-[#D10046]/90 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200 cursor-pointer'>
             Agendar Diagnóstico
           </button>
-        </div>
+        </div> */}
 
         {/* Mobile nav */}
         <div className='md:hidden flex items-center mr-2'>

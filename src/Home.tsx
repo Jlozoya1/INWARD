@@ -1,12 +1,11 @@
 import Header from './components/header'
+import HeroSection from './components/home/heroSection'
 import Footer from './components/footer'
 export default function Home(){
   return(
     <>
       <Header/>
-      <div className='h-220 flex justify-center'>
-        hola
-      </div>
+      <HeroSection/>
       <Footer/>
     </>
   )
