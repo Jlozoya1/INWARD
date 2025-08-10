@@ -46,9 +46,6 @@ export default function HeroSection(){
 
         <div className="absolute bottom-0 left-0 right-0 w-full h-16 bg-[#D10046] shadow-lg"></div>
       </section>
-      <div className="min-h-screen flex">
-          <h2>hola</h2>
-        </div>
     </>
   )
 }

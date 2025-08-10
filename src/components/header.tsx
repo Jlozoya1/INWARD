@@ -19,6 +19,7 @@ export default function Header(){
     {label:'Inicio', id:'inicio', to:'#'},
     {label:'Servicios', id:'servicios', to:'#'},
     {label:'Nosotros', id:'nosotros', to:'#'},
+    {label:'Alianzas', id:'alianzas', to:'#'},
     {label:'Contacto', id:'contacto', to:'#'},
   ];
 
