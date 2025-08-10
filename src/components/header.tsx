@@ -16,11 +16,11 @@ export default function Header(){
   }, [])
 
   const navItems = [
-    {label:'Inicio', id:'inicio', to:'#'},
-    {label:'Servicios', id:'servicios', to:'#'},
-    {label:'Nosotros', id:'nosotros', to:'#'},
-    {label:'Alianzas', id:'alianzas', to:'#'},
-    {label:'Contacto', id:'contacto', to:'#'},
+    {label:'Inicio', id:'inicio', to:'/'},
+    {label:'Servicios', id:'servicios', to:'/servicios'},
+    {label:'Nosotros', id:'nosotros', to:'/nosotros'},
+    {label:'Alianzas', id:'alianzas', to:'/alianzas'},
+    {label:'Contacto', id:'contacto', to:'/contacto'},
   ];
 
   return(

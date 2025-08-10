@@ -72,7 +72,7 @@ export default function Services(){
 
               return(
                 <div 
-                  className="group p-8 h-full bg-white hover:bg-inward-light-gray transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-gray-100 hover:border-inward-blue/20 cursor-pointer rounded-lg border bg-card text-card-foreground shadow-sm"
+                  className="group p-8 h-full bg-white hover:bg-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-gray-100 hover:border-inward-blue/20 cursor-pointer rounded-lg border bg-card text-card-foreground shadow-sm"
                   key={index}
                   >
                   <div className="text-center space-y-6">
