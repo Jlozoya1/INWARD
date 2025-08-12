@@ -2,21 +2,26 @@ import { FileText, TrendingUp, Briefcase, Shield, Globe, PieChart, Calculator, B
 import AgroIMG from '../../assets/agronomia.jpg'
 import GubernamentalIMG from '../../assets/gubernamental.jpg'
 import CasaIMG from '../../assets/casa.jpg'
+import MecanicoIMG from '../../assets/mecanico.jpg'
 
 export default function ContentServicios(){
   return(
     <>
       <div className="min-h-screen">
-        <section className="py-20">
+        <section className="relative py-20 min-h-120 bg-cover bg-[center_top_30%]" style={{ backgroundImage: `url(${MecanicoIMG})` }}>
+          <div className="absolute inset-0 bg-black/40"></div>
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#0A2F5B]">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white/90 leading-tight drop-shadow-md">
               Nuestros Servicios
             </h1>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-100 max-w-3xl mx-auto leading-tight drop-shadow-md">
               Ofrecemos un ecosistema integral de soluciones empresariales diseñadas para impulsar 
               el crecimiento, optimizar la eficiencia y asegurar el cumplimiento normativo de tu organización.
             </p>
           </div>
+          
+          <div className="absolute bottom-0 left-0 right-0 w-full h-16 bg-[#D10046] shadow-lg"></div>
+
         </section>
 
         <section className="py-16">

@@ -4,11 +4,11 @@ import mexican from '../../assets/mexican.jpg'
 export default function HeroSection(){
   return(
     <>
-      <section className="relative min-h-200 flex items-center justify-center bg-no-repeat 
+      <section className="relative min-h-200 md:min-h-184 flex items-center justify-center bg-no-repeat 
              lg:bg-[length:130%] bg-cover md:bg-cover 
              bg-[center_top_10%] overflow-hidden" style={{ backgroundImage: `url(${mexican})` }}>
          <div className="absolute inset-0 bg-black/50"></div> {/* Capa oscura */}
-        <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center max-w-6xl">
+        <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center max-w-6xl justify-center">
           <div className="space-y-8">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/90 leading-tight drop-shadow-md">
               Potenciamos el crecimiento y la seguridad en tu negocio
@@ -26,7 +26,7 @@ export default function HeroSection(){
               </button>
             </div>
 
-            <div className="pt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+            <div className="pt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto md:pb-4">
               <div className="text-center">
                 <div className="text-3xl font-bold text-white/90">12+</div>
                 <div className="text-white">Años de Experiencia</div>
@@ -44,8 +44,11 @@ export default function HeroSection(){
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 w-full h-16 bg-[#D10046] shadow-lg"></div>
+        {/* <div className="absolute bottom-0 left-0 right-0 w-full h-16 bg-[#D10046] shadow-lg"></div> */}
       </section>
+
+      <div className="bottom-0 left-0 right-0 w-full h-16 bg-[#D10046] shadow-lg"></div>
+
     </>
   )
 }
