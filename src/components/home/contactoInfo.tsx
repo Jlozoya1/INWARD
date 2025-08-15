@@ -68,7 +68,7 @@ export default function ContactInfo(){
                   />
                 </div>
 
-                <button type="submit" className="w-full bg-[#D10046] hover:bg-[#D10046]/90 text-white py-2 font-semibold rounded-lg transition-all duration-300 hover:scale-[1.02]">
+                <button type="submit" className="w-full bg-[#D10046] hover:bg-[#D10046]/90 text-white py-2 font-semibold rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer">
                   Enviar Mensaje
                 </button>
               </form>

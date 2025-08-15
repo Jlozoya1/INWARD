@@ -1,4 +1,3 @@
-import building from '../../assets/building.jpg'
 import edificiosIMG from '../../assets/skyHigh.jpg'
 export default function HistorySection(){
   return(
