@@ -1,9 +1,9 @@
 import building from '../../assets/building.jpg'
-
+import edificiosIMG from '../../assets/skyHigh.jpg'
 export default function HistorySection(){
   return(
     <>
-      <section className="py-16 md:py-24">
+      {/* <section className="py-16 md:py-24">
         <div className="container mx-auto px-6">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="mx-auto w-full max-w-3xl md:max-w-none">
@@ -48,6 +48,33 @@ export default function HistorySection(){
             </div>
           </div>
         </div>
+      </section> */}
+
+      <section id='history' className='relative min-h-160 bg-cover bg-center grayscale ' style={{backgroundImage: `url(${edificiosIMG})` }}>
+        <div className='grid grid-cols-1 md:grid-cols-2'>
+          <div className='p-12 z-10 animate-slide-in-left'>
+            <h1 className='text-5xl text-white'>Sobre Nosotros</h1>
+            <p className='text-white pt-8'>
+              Consultoría mexicana, especializada en Soluciones integrales de Eficiencia y 
+              Efectividad a través de la consultoría y capacitación.
+            </p>
+          </div>
+          <div className='flex flex-wrap gap-y-4 pt-15 md:pt-60 z-10 p-12 text-white animate-slide-in-right' >
+            <p>
+              INWARD es una reconocida firma de consultoría fiscal y gestión de activos con más de 20 años de experiencia, 
+              dedicada a optimizar las operaciones de empresas de diversos sectores en México. Fundada bajo los principios 
+              de excelencia, integridad y compromiso, se ha consolidado como un aliado estratégico, ayudando a sus clientes 
+              a minimizar riesgos y maximizar oportunidades de crecimiento en un entorno fiscal y empresarial complejo.
+            </p>
+            <p>
+              Nuestro equipo multidisciplinario, compuesto por especialistas en derecho fiscal, contabilidad, finanzas 
+              corporativas y gestión de activos, diseña soluciones personalizadas que generan valor tangible. 
+              En INWARD, priorizamos las necesidades únicas de cada cliente, desarrollando estrategias a medida que 
+              promueven resultados sostenibles y un crecimiento rentable a largo plazo.
+            </p>
+          </div>
+        </div>
+        <div className='absolute inset-0 bg-black/40'></div>
       </section>
     </>
   )

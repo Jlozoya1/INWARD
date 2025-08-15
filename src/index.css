@@ -1,11 +1,37 @@
 @import "tailwindcss";
 
-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-}
-/* @layer base {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
   }
-} */
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 1.4s ease-in forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 1.4s ease-out forwards;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
