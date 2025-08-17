@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 export default function ContactInfo(){
   return(
     <>
-      <section className="py-20 lg:py:32 bg-gray-200">
+      <section className="py-20 lg:py:32 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A2F5B] mb-6">

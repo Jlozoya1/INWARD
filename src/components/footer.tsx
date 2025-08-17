@@ -16,6 +16,28 @@ export default function Footer(){
                 </p>
               </div>
 
+              {/* <div className="space-y-2 text-sm">
+                <p className="text-white/80">
+                  <span className="font-semibold">Email:</span> comunicacion@inward.com.mx
+                </p>
+                <p className="text-white/80">
+                  <span className="font-semibold">Teléfono:</span> +52 (312) 323 53 33
+                </p>
+                <p className="text-white/80">
+                  <span className="font-semibold">Dirección:</span> Olivo Negro 28-A, Col. Lomas de Circunvalación, Colima, Col., México. C.P. 28010
+                </p>
+              </div> */}
+            </div>
+            
+            <div className="space-y-4 md:col-start-2 lg:col-start-4">
+              {/* <h3 className="text-lg font-bold text-white">Nuestros Servicios</h3>
+              <ul className="space-y-2 text-sm">
+                <li className="text-white/80">Gestión Fiscal y Contable</li>
+                <li className="text-white/80">Estrategia y Crecimiento</li>
+                <li className="text-white/80">Defensa y Cumplimiento</li>
+                <li className="text-white/80">Sectores Especializados</li>
+                <li className="text-white/80">Consultoría Integral</li>
+              </ul> */}
               <div className="space-y-2 text-sm">
                 <p className="text-white/80">
                   <span className="font-semibold">Email:</span> comunicacion@inward.com.mx
@@ -27,17 +49,6 @@ export default function Footer(){
                   <span className="font-semibold">Dirección:</span> Olivo Negro 28-A, Col. Lomas de Circunvalación, Colima, Col., México. C.P. 28010
                 </p>
               </div>
-            </div>
-            
-            <div className="space-y-4 md:col-start-2 lg:col-start-4">
-              <h3 className="text-lg font-bold text-white">Nuestros Servicios</h3>
-              <ul className="space-y-2 text-sm">
-                <li className="text-white/80">Gestión Fiscal y Contable</li>
-                <li className="text-white/80">Estrategia y Crecimiento</li>
-                <li className="text-white/80">Defensa y Cumplimiento</li>
-                <li className="text-white/80">Sectores Especializados</li>
-                <li className="text-white/80">Consultoría Integral</li>
-              </ul>
             </div>
           </div>
 
