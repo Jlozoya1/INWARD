@@ -4,22 +4,46 @@ const services = [
   {
     title: 'Gestion Fiscal y Contable',
     description: 'El día a día, resuelto.',
-    icon: <Calculator/>
+    icon: <Calculator/>,
+    services: [
+      "Outsourcing contable",
+      "Nómina",
+      "Administración eficiente",
+      "Consultoría continua"
+    ]
   },
   {
     title: 'Impulso Estratégico y Patrimonial',
     description: 'Mirando hacia el futuro.',
-    icon: <TrendingUp/>
+    icon: <TrendingUp/>,
+    services: [
+      "Planeación estratégica",
+      "Inversiones y M&A",
+      "Financiamiento",
+      "Empresa familiar"
+    ]
   },
   {
     title: 'Defensa y Cumplimiento',
     description: 'Tu tranquilidad asegurada.',
-    icon: <Shield/>
+    icon: <Shield/>,
+    services: [
+      "Defensa fiscal estratégica",
+      "Recuperación de saldos",
+      "Auditorías y dictámenes",
+      "Cumplimiento normativo"
+    ]
   },
   {
     title: 'Experiencia en Sectores Clave',
     description: 'Entendemos tu industria.',
-    icon: <Building/>
+    icon: <Building/>,
+    services: [
+      "Agronegocios",
+      "Sector Gubernamental",
+      "Inmobiliario Patrimonial",
+      "Consultoría especializada"
+    ]
   },
 ];
 
@@ -31,7 +55,7 @@ export default function ServicesSection(){
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {services.map((service) => (
-            <div className=" p-8 group h-full rounded-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer bg-[#313132]">
+            <div className="p-8 group h-full rounded-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer bg-[#313132]" key={service.title}>
               <div className="text-center space-y-6">
                 <div className="mx-auto w-16 h-16 bg-[#D10046] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 text-white">
                   {service.icon}
@@ -41,6 +65,16 @@ export default function ServicesSection(){
                 </div>
                 <div className="text-gray-100 font-semibold  text-sm">
                   {service.description}
+                </div>
+                <div className="space-y-2">
+                  {service.services.map((item, idx) => (
+                    <div 
+                      key={idx} 
+                      className="text-gray-100 group-hover:text-inward-blue transition-colors duration-200 text-sm"
+                    >
+                      • {item}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

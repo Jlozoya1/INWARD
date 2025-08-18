@@ -64,7 +64,7 @@ export default function HeroSection(){
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Contenido encima */}
-        <div className="relative z-10 px-4 text-5xl font-semibold font-sans md:-top-20 w-4/5">
+        <div className="relative z-10 text-2xl items-center justify-center md:text-4xl md:text-left md:justify-start  font-semibold font-sans md:-top-20 w-5/6 lg:w-1/2">
           {/* <h1>Estrategia</h1>
           <span className='text-[#D10046]'>Crecimiento</span>
           <h1>Valor</h1>
@@ -73,12 +73,10 @@ export default function HeroSection(){
             Consultoría fiscal, gestión de activos y soluciones estratégicas para un crecimiento sólido y seguro.
           </p> */}
           <h1>
-            Unimos estrategia y experiencia
-            
-            
+            Despacho Contable para empresas
           </h1>
-          <span>para que puedas </span>
-          <span>crecer, proteger y liderar</span>
+          <span className='text-[#D10046]'>Eficiencia y tranquilidad financiera</span> <br />
+          {/* <span>Resultados medibles y sostenibles</span> */}
         </div>
       </section>
 

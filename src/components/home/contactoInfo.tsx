@@ -3,10 +3,10 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 export default function ContactInfo(){
   return(
     <>
-      <section className="py-20 lg:py:32 bg-white">
+      <section className="py-20 lg:py:32 bg-gray-100">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A2F5B] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Contacto
             </h2>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
@@ -16,7 +16,7 @@ export default function ContactInfo(){
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <div className="bg-[#F8F9FA] rounded-2xl p-8 lg:p-10">
-              <h3 className="text-2xl font-bold text-[#0A2F5B] mb-6">
+              <h3 className="text-2xl font-bold mb-6">
                 Envíanos un Mensaje
               </h3>
 
@@ -84,7 +84,7 @@ export default function ContactInfo(){
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#0A2F5B] mb-1">
+                    <h4 className="font-semibold mb-1">
                       Correo Electrónico
                     </h4>
                     <a href="mailto:comunicacion@inward.com.mx" className="text-inward-gray hover:text-gray-700 transition-colors duration-200">
@@ -103,7 +103,7 @@ export default function ContactInfo(){
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#0A2F5B] mb-1">
+                    <h4 className="font-semibold mb-1">
                       Teléfono
                     </h4>
                     <a href="tel:+523123235333" className="text-inward-gray hover:text-gray-700 transition-colors duration-200">
@@ -122,7 +122,7 @@ export default function ContactInfo(){
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#0A2F5B] mb-1">
+                    <h4 className="font-semibold mb-1">
                       Dirección
                     </h4>
                     <p className="text-gray-700">
@@ -144,7 +144,7 @@ export default function ContactInfo(){
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#0A2F5B] mb-1">
+                    <h4 className="font-semibold mb-1">
                       Horarios de Atención
                     </h4>
                     <p className="text-gray-700">

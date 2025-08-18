@@ -49,18 +49,22 @@ export default function HistorySection(){
         </div>
       </section> */}
 
-      <section id='history' className='relative min-h-160 bg-cover bg-center grayscale ' style={{backgroundImage: `url(${edificiosIMG})` }}>
+      <section id='history' className='relative min-h-160' >
+        {/* IMG Cover */}
+        <div className='absolute inset-0 bg-cover bg-center grayscale' style={{backgroundImage: `url(${edificiosIMG})` }}></div>
+
+        {/* Text Section */}
         <div className='grid grid-cols-1 md:grid-cols-2'>
-          <div className='p-12 z-10 animate-slide-in-left'>
+          <div className='p-12 z-10'>
             <h1 className='text-5xl text-white'>Sobre Nosotros</h1>
             <p className='text-white pt-8'>
               Consultoría mexicana, especializada en Soluciones integrales de Eficiencia y 
               Efectividad a través de la consultoría y capacitación.
             </p>
           </div>
-          <div className='flex flex-wrap gap-y-4 pt-15 md:pt-60 z-10 p-12 text-white animate-slide-in-right' >
+          <div className='flex flex-wrap gap-y-4 pt-15 md:pt-60 z-10 p-12 text-white' >
             <p>
-              INWARD es una reconocida firma de consultoría fiscal y gestión de activos con más de 20 años de experiencia, 
+              <span className='text-[#D10046]'>INWARD</span> es una reconocida firma de consultoría fiscal y gestión de activos con más de 20 años de experiencia, 
               dedicada a optimizar las operaciones de empresas de diversos sectores en México. Fundada bajo los principios 
               de excelencia, integridad y compromiso, se ha consolidado como un aliado estratégico, ayudando a sus clientes 
               a minimizar riesgos y maximizar oportunidades de crecimiento en un entorno fiscal y empresarial complejo.
@@ -68,7 +72,7 @@ export default function HistorySection(){
             <p>
               Nuestro equipo multidisciplinario, compuesto por especialistas en derecho fiscal, contabilidad, finanzas 
               corporativas y gestión de activos, diseña soluciones personalizadas que generan valor tangible. 
-              En INWARD, priorizamos las necesidades únicas de cada cliente, desarrollando estrategias a medida que 
+              En <span className='text-[#D10046]'>INWARD</span>, priorizamos las necesidades únicas de cada cliente, desarrollando estrategias a medida que 
               promueven resultados sostenibles y un crecimiento rentable a largo plazo.
             </p>
           </div>
