@@ -1,172 +1,130 @@
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
-export default function ContactInfo(){
-  return(
-    <>
-      <section className="py-20 lg:py:32 bg-gray-100">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Contacto
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              Estamos aquí para ayudarte. Contáctanos y comencemos a trabajar juntos en el crecimiento de tu empresa.
-            </p>
+export default function ContactSection() {
+  return (
+    <section id="contacto" className="bg-black py-12 sm:py-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            <span className="text-[#dc2626]">Conversemos.</span> El primer paso
+            a tu crecimiento.
+          </h2>
+          <p className="mt-4 text-lg text-gray-300">
+            Estamos listos para contribuir al futuro de tu empresa. Contáctanos
+            para una consulta personalizada.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="bg-[#1C1C1C] rounded-2xl p-8 lg:p-10">
+            <h3 className="text-2xl font-bold text-white mb-6">
+              Envíanos un Mensaje
+            </h3>
+
+            <form action="#" method="POST" className="space-y-6">
+              <div>
+                <label htmlFor="name" className="font-medium text-gray-200">
+                  Nombre Completo *
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  className="mt-2 w-full rounded-md bg-white/5 px-4 py-2 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                  placeholder="Tu nombre completo"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="font-medium text-gray-200">
+                  Correo Electrónico *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  className="mt-2 w-full rounded-md bg-white/5 px-4 py-2 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                  placeholder="tu@empresa.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="font-medium text-gray-200">
+                  Mensaje *
+                </label>
+                <textarea
+                  rows={4}
+                  name="message"
+                  id="message"
+                  required
+                  className="mt-2 w-full rounded-md bg-white/5 px-4 py-2 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition resize-none"
+                  placeholder="Cuéntanos sobre tu empresa y cómo podemos ayudarte."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-[#dc2626] hover:bg-red-700 text-white py-3 font-semibold rounded-lg transition-all duration-300 cursor-pointer"
+              >
+                Enviar Mensaje
+              </button>
+            </form>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div className="bg-[#F8F9FA] rounded-2xl p-8 lg:p-10">
-              <h3 className="text-2xl font-bold mb-6">
-                Envíanos un Mensaje
-              </h3>
-
-              <form action="" className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="font-medium ">Nombre Completo *</label>
-                  <input 
-                    type="text" 
-                    name="name"
-                    id="name"
-                    required
-                    className="mt-2 border-gray-200 focus:border-[#0A2F5B] focus:ring-[#0A2F5B] flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-                    placeholder="Tu nombre completo"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="font-medium ">Correo Electronico *</label>
-                  <input 
-                    type="text" 
-                    name="email"
-                    id="email"
-                    required
-                    className="mt-2 border-gray-200 focus:border-[#0A2F5B] focus:ring-[#0A2F5B] flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-                    placeholder="tu@empresa.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="font-medium ">Teléfono</label>
-                  <input 
-                    type="text" 
-                    name="phone"
-                    id="phone"
-                    className="mt-2 border-gray-200 focus:border-[#0A2F5B] focus:ring-[#0A2F5B] flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-                    placeholder="312-123-4567"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="messaje" className="font-medium ">Mensaje *</label>
-                  <textarea 
-                    rows={4}
-                    name="message"
-                    id="messaje"
-                    required
-                    className="mt-2 border-gray-300 focus:border-[#0A2F5B] focus:ring-[#0A2F5B] resize-none flex min-h-[80px] w-full rounded-md border border-input bg-white px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" 
-                    placeholder="Cuéntanos sobre tu empresa y como podemos ayudarte"
-                  />
-                </div>
-
-                <button type="submit" className="w-full bg-[#D10046] hover:bg-[#D10046]/90 text-white py-2 font-semibold rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer">
-                  Enviar Mensaje
-                </button>
-              </form>
+          <div className="space-y-6">
+            <div className="bg-[#1C1C1C] rounded-xl p-6 flex items-start gap-x-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-[#dc2626] rounded-lg flex items-center justify-center">
+                <Mail className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-white">
+                  Correo Electrónico
+                </h4>
+                <a
+                  href="mailto:comunicacion@inward.com.mx"
+                  className="text-gray-300 hover:text-red-500 transition"
+                >
+                  comunicacion@inward.com.mx
+                </a>
+              </div>
             </div>
 
-            <div className="space-y-6">
-              {/* Email */}
-              <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:border-[#0A2F5B]/30 transition-colors duration-300">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#D10046] rounded-lg flex items-center justify-center">
-                      <Mail className="h-6 w-6 text-white"/>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">
-                      Correo Electrónico
-                    </h4>
-                    <a href="mailto:comunicacion@inward.com.mx" className="text-inward-gray hover:text-gray-700 transition-colors duration-200">
-                      comunicacion@inward.com.mx
-                    </a>
-                  </div>
-                </div>
+            <div className="bg-[#1C1C1C] rounded-xl p-6 flex items-start gap-x-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-[#dc2626] rounded-lg flex items-center justify-center">
+                <Phone className="h-6 w-6 text-white" />
               </div>
-
-              {/* Phone */}
-              <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:border-[#0A2F5B]/30 transition-colors duration-300">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#D10046] rounded-lg flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-white"/>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">
-                      Teléfono
-                    </h4>
-                    <a href="tel:+523123235333" className="text-inward-gray hover:text-gray-700 transition-colors duration-200">
-                      (312) 323 5333
-                    </a>
-                  </div>
-                </div>
+              <div>
+                <h4 className="text-lg font-semibold text-white">Teléfono</h4>
+                <a
+                  href="tel:+523123235333"
+                  className="text-gray-300 hover:text-red-500 transition"
+                >
+                  (312) 323 53 33
+                </a>
               </div>
-
-              {/* Address */}
-              <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:border-[#0A2F5B]/30 transition-colors duration-300">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#D10046] rounded-lg flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-white"/>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">
-                      Dirección
-                    </h4>
-                    <p className="text-gray-700">
-                      Olivo Negro 28-A<br />
-                      Col. Lomas de Circunvalación<br />
-                      Colima, Col., México<br />
-                      C.P. 28010
-                    </p>
-                  </div>
-                </div>
+            </div>
+            <div className="bg-[#1C1C1C] rounded-xl p-6 flex items-start gap-x-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-[#dc2626] rounded-lg flex items-center justify-center">
+                <MapPin className="h-6 w-6 text-white" />
               </div>
-
-              {/* Hours */}
-              <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:border-[#0A2F5B]/30 transition-colors duration-300">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#D10046] rounded-lg flex items-center justify-center">
-                      <Clock className="h-6 w-6 text-white"/>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">
-                      Horarios de Atención
-                    </h4>
-                    <p className="text-gray-700">
-                      Lunes a Viernes: 9:00 AM - 6:00 PM<br />
-                      Sábados: 9:00 AM - 2:00 PM
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Google Maps */}
-              <div className="bg-gray-300 rounded-xl h-64 flex items-center justify-center">
-                <p className="text-inward-gray">
-                  Mapa de ubicación
-                  <br />
-                  <span className="text-sm">(Google Maps se integraría aquí)</span>
+              <div>
+                <h4 className="text-lg font-semibold text-white">Dirección</h4>
+                <p className="text-gray-300">
+                  Olivo Negro 28-A, Col. Lomas de Circunvalación, Colima, Col.,
+                  México. C.P. 28010
                 </p>
               </div>
             </div>
+
+            {/* Mapa */}
+            <div className="bg-[#1C1C1C] rounded-xl h-64 flex items-center justify-center">
+              <p className="text-gray-400">Google Maps va aquí</p>
+            </div>
           </div>
         </div>
-      </section>
-    </>
-  )
+      </div>
+    </section>
+  );
 }

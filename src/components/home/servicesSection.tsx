@@ -1,78 +1,91 @@
-import { Calculator, TrendingUp, Shield,Building } from "lucide-react";
+import { Calculator, TrendingUp, Shield, Building } from "lucide-react";
 
-const services = [
+const servicesData = [
   {
-    title: 'Gestion Fiscal y Contable',
-    description: 'El día a día, resuelto.',
-    icon: <Calculator/>,
-    services: [
+    title: "Gestión Fiscal y Contable",
+    description: "El día a día, resuelto.",
+    icon: <Calculator size={32} />,
+    details: [
       "Outsourcing contable",
       "Nómina",
       "Administración eficiente",
-      "Consultoría continua"
-    ]
+      "Consultoría continua",
+    ],
   },
   {
-    title: 'Impulso Estratégico y Patrimonial',
-    description: 'Mirando hacia el futuro.',
-    icon: <TrendingUp/>,
-    services: [
+    title: "Estrategia y Crecimiento",
+    description: "Mirando hacia el futuro.",
+    icon: <TrendingUp size={32} />,
+    details: [
       "Planeación estratégica",
       "Inversiones y M&A",
-      "Financiamiento",
-      "Empresa familiar"
-    ]
+      "Financiamiento y capital",
+      "Empresa familiar",
+    ],
   },
   {
-    title: 'Defensa y Cumplimiento',
-    description: 'Tu tranquilidad asegurada.',
-    icon: <Shield/>,
-    services: [
+    title: "Defensa y Cumplimiento",
+    description: "Tu tranquilidad asegurada.",
+    icon: <Shield size={32} />,
+    details: [
       "Defensa fiscal estratégica",
       "Recuperación de saldos",
       "Auditorías y dictámenes",
-      "Cumplimiento normativo"
-    ]
+      "Calidad fiscal",
+    ],
   },
   {
-    title: 'Experiencia en Sectores Clave',
-    description: 'Entendemos tu industria.',
-    icon: <Building/>,
-    services: [
+    title: "Sectores Especializados",
+    description: "Entendemos tu industria.",
+    icon: <Building size={32} />,
+    details: [
       "Agronegocios",
       "Sector Gubernamental",
       "Inmobiliario Patrimonial",
-      "Consultoría especializada"
-    ]
+    ],
   },
 ];
 
-export default function ServicesSection(){
-  return(
-    <>
-      <section id="services" className="min-h-120 p-20 md:text-center text-left">
-        <h1 className="text-5xl text-white pb-10 font-semibold">Explora nuestros servicios:</h1>
+export default function ServicesSection() {
+  return (
+    <section id="services" className="bg-black py-12 sm:py-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white">
+            Nuestro ecosistema de{" "}
+            <span className="text-[#dc2626]">soluciones 360°</span>
+          </h2>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-300">
+            Una visión integral para el{" "}
+            <span className="text-[#dc2626]">éxito</span> y la tranquilidad de
+            tu empresa.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {services.map((service) => (
-            <div className="p-8 group h-full rounded-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer bg-[#313132]" key={service.title}>
-              <div className="text-center space-y-6">
-                <div className="mx-auto w-16 h-16 bg-[#D10046] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 text-white">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {servicesData.map((service) => (
+            <div
+              key={service.title}
+              className="group h-full rounded-2xl bg-[#1C1C1C] p-8 text-center transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+            >
+              <div className="flex flex-col h-full">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#dc2626] text-white transition-transform duration-300 group-hover:scale-110">
                   {service.icon}
                 </div>
-                <div className="text-lg  font-bold text-white/90 group-hover:text-inward-red transition-colors duration-300">
-                  {service.title}
+
+                <div className="mt-6">
+                  <h3 className="text-xl font-bold text-white">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm font-semibold text-gray-300">
+                    {service.description}
+                  </p>
                 </div>
-                <div className="text-gray-100 font-semibold  text-sm">
-                  {service.description}
-                </div>
-                <div className="space-y-2">
-                  {service.services.map((item, idx) => (
-                    <div 
-                      key={idx} 
-                      className="text-gray-100 group-hover:text-inward-blue transition-colors duration-200 text-sm"
-                    >
-                      • {item}
+
+                <div className="mt-6 flex-grow space-y-2">
+                  {service.details.map((item, idx) => (
+                    <div key={idx} className="text-sm text-gray-400">
+                      {item}
                     </div>
                   ))}
                 </div>
@@ -80,11 +93,7 @@ export default function ServicesSection(){
             </div>
           ))}
         </div>
-
-        <div className="flex items-center justify-center mt-10">
-          <button className="rounded-lg bg-[#D10046] px-6 py-3 cursor-pointer hover:bg-[#cb1551] text-white/90">Explora nuestros servicios</button>
-        </div>
-      </section>
-    </>
-  )
+      </div>
+    </section>
+  );
 }
