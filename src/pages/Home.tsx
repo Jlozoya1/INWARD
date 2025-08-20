@@ -4,7 +4,7 @@ import AboutSection from "../components/home/aboutUsSection";
 import ServicesSection from "../components/home/servicesSection";
 import ContactInfo from "../components/home/contactoInfo";
 import Footer from "../components/footer";
-import WhyInwardSection from "../components/home/WhyInwardSection";
+import WhyInwardSection from "../components/home/whyInwardSection";
 export default function Home() {
   return (
     <>
