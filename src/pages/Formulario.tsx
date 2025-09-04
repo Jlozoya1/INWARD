@@ -1,5 +1,7 @@
 import { useState } from "react"
+import { useNavigate } from "react-router";
 import {setDataWebhook} from "../api/api.ts"
+import Swal from "sweetalert2";
 
 export default function Formulario(){
   const [formData, setFormData] = useState({
@@ -35,26 +37,90 @@ export default function Formulario(){
     VIII3: '',
     IX1: '',
     IX2: '',
+    IX2Op1: '',
     X1: '',
     X2: '',
     X3: '',
     X4: '',
     X5: '',
+    XI: {
+      act1 : {monto : '' , viñeta: "◻︎"},
+      act2 : {monto : '' , viñeta: "◻︎"},
+      act3 : {monto : '' , viñeta: "◻︎"},
+      act4 : {monto : '' , viñeta: "◻︎"},
+      act5 : {monto : '' , viñeta: "◻︎"},
+      act6 : {monto : '' , viñeta: "◻︎"},
+      act7 : {monto : '' , viñeta: "◻︎"},
+      act8 : {monto : '' , viñeta: "◻︎"},
+      act9 : {monto : '' , viñeta: "◻︎"},
+      act10 : {monto : '' , viñeta: "◻︎"},
+      act11 : {monto : '' , viñeta: "◻︎"},
+      act12 : {monto : '' , viñeta: "◻︎"},
+      act13 : {monto : '' , viñeta: "◻︎"},
+      act14 : {monto : '' , viñeta: "◻︎"},
+      act15 : {monto : '' , viñeta: "◻︎"},
+      act16 : {monto : '' , viñeta: "◻︎"},
+    },
+    XIIA: '', 
+    XIIB: '', 
+    XIIC: '', 
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name] : e.target.value
     });
-    console.log(formData);
   };
+
+  const handleActivities = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, type, checked, value } = e.target;
+    const keys = name.split(".");
+
+    const finalValue = type === "checkbox" ? (checked ? "◼︎" : "◻") : value;
+
+    setFormData(prev => {
+      let updated = { ...prev };
+      let curr: any = updated;
+
+      keys.forEach((key, index) => {
+        if (index === keys.length - 1) {
+          curr[key] = finalValue;
+        } else {
+          curr[key] = { ...curr[key] };
+          curr = curr[key];
+        }
+      });
+      return updated;
+  });
+};
 
   const [pagina, setPagina] = useState(1);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>){
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault();
-    setDataWebhook(formData);
+    const response = await setDataWebhook(formData);
+
+    if(response.status == 200){
+      Swal.fire({
+        title: "Informacion enviada Correctamente",
+        icon: "success",
+        theme: "dark",
+        confirmButtonColor: "#dc2626"
+      });
+      setTimeout(() => {
+        return navigate("/");
+      }, 2000);
+    } else {
+      Swal.fire({
+        title: "Por favor intente de nuevo",
+        icon: "error",
+        theme: "dark",
+        confirmButtonColor: "#dc2626"
+      });
+    }
   };
   return(
     <>
@@ -73,7 +139,7 @@ export default function Formulario(){
 
           
           <form onSubmit={handleSubmit}>
-            { pagina == 1 && (
+            {pagina == 1 && (
               <div>
                 <p className="py-3 font-semibold">Datos Generales del Sujeto Obligado:</p>
                 <div className="mb-3">
@@ -773,12 +839,622 @@ export default function Formulario(){
                     <label htmlFor="IX2_NO">No</label>
                   </div>
                 </div>
+                {formData.IX2 == "si" && (
+                  <div className="mb-3">
+                    <label htmlFor="IXOp1">
+                      ¿Qué acciones tomó?
+                    </label>
+                    <input type="text" name="IXOp1" id="IXOp1" 
+                      required={false}
+                      className="mt-2 w-full rounded-md bg-white/5 px-4 py-2 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                      onChange={(e) => {setFormData({...formData, IX2Op1: e.target.value})}}
+                    />
+                  </div>
+                )}
+                
+              </div>
+            )}
+
+            {pagina == 7 && (
+              <div>
+                <p className="py-3 font-semibold">X.	PEPs y Listas de Personas Bloqueadas</p>
+                <div className="mb-3">
+                  <label htmlFor="X1">
+                    1.¿Cuenta con procedimientos para identificar si los representantes legales, funcionarios o beneficiarios finales son Personas Expuestas Políticamente (PEPs)?
+                  </label>
+                  <div>
+                    <input
+                      type="radio"
+                      name="X1"
+                      id="X1_si"
+                      value="si"
+                      checked={formData.X1 === "si"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="X1_si">Sí</label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="X1"
+                      id="X1_no"
+                      value="no"
+                      checked={formData.X1 === "no"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="X1_no">No</label>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="X1">
+                    2.	En caso de identificar una PEP, ¿aplica medidas de debida diligencia reforzada?
+                  </label>
+                  <div>
+                    <input
+                      type="radio"
+                      name="X2"
+                      id="X2_si"
+                      value="si"
+                      checked={formData.X2 === "si"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="X2_si">Sí</label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="X2"
+                      id="X2_no"
+                      value="no"
+                      checked={formData.X2 === "no"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="X2_no">No</label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="X2"
+                      id="X2_no"
+                      value="no"
+                      checked={formData.X2 === "NA"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="X2_no">No Aplica</label>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="X3">
+                    3.	¿Consulta regularmente las listas oficiales de personas bloqueadas emitidas por la UIF, OFAC, ONU u otras fuentes relevantes?
+                  </label>
+                  <div>
+                    <input
+                      type="radio"
+                      name="X3"
+                      id="X3_si"
+                      value="si"
+                      checked={formData.X3 === "si"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="X3_si">Sí</label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="X3"
+                      id="X3_no"
+                      value="no"
+                      checked={formData.X3 === "no"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="X3_no">No</label>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="X4">
+                    4.	¿Cuenta con evidencia documental (pantallas, reportes, oficios internos) de dichas consultas?
+                  </label>
+                  <div>
+                    <input
+                      type="radio"
+                      name="X4"
+                      id="X4_si"
+                      value="si"
+                      checked={formData.X4 === "si"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="X4_si">Sí</label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="X4"
+                      id="X4_no"
+                      value="no"
+                      checked={formData.X4 === "no"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="X4_no">No</label>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="X5">
+                    5.	¿Tiene definido un procedimiento para actuar en caso de detectar coincidencias en listas negras o bloqueadas?
+                  </label>
+                  <div>
+                    <input
+                      type="radio"
+                      name="X5"
+                      id="X5_si"
+                      value="si"
+                      checked={formData.X5 === "si"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="X5_si">Sí</label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="X5"
+                      id="X5_no"
+                      value="no"
+                      checked={formData.X5 === "no"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="X5_no">No</label>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {pagina == 8 && (
+              <div>
+                <p className="py-3 font-semibold mb-3">XI.	Actividades Vulnerables</p>
+                <p className="py-2 mb-1">
+                  1.	¿Realiza alguna de las siguientes actividades vulnerables conforme a la LFPIORPI y en caso de marcar poner el importe mensual que manejan según la actividad? (Puede marcar más de una):
+                </p>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act1.viñeta"
+                    id="XI-ACT1"
+                    value="◼︎"
+                    checked={formData.XI.act1.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT1" className="pl-2">Operaciones con activos virtuales </label>
+                  {formData.XI.act1.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act1.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act2.viñeta"
+                    id="XI-ACT2"
+                    value="◼︎"
+                    checked={formData.XI.act2.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT2" className="pl-2">Desarrollo Inmobiliario </label>
+                  {formData.XI.act2.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act2.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act3.viñeta"
+                    id="XI-ACT3"
+                    value="◼︎"
+                    checked={formData.XI.act3.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT3" className="pl-2">Juegos y Sorteos </label>
+                  {formData.XI.act3.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act3.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act4.viñeta"
+                    id="XI-ACT4"
+                    value="◼︎"
+                    checked={formData.XI.act4.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT4" className="pl-2">Desarrollo Inmobiliario </label>
+                  {formData.XI.act4.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act4.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act5.viñeta"
+                    id="XI-ACT5"
+                    value="◼︎"
+                    checked={formData.XI.act5.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT5" className="pl-2">Emisión de tarjetas de servicio, crédito, prepago, cupones, devolución y/o recompensas  </label>
+                  {formData.XI.act5.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act5.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act6.viñeta"
+                    id="XI-ACT6"
+                    value="◼︎"
+                    checked={formData.XI.act6.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT6" className="pl-2">Emisión de Cheques de viajero  </label>
+                  {formData.XI.act6.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act6.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act7.viñeta"
+                    id="XI-ACT7"
+                    value="◼︎"
+                    checked={formData.XI.act7.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT7" className="pl-2">Realización de Mutuos, Prestamos o créditos de alguna índole (Importe mensual)  </label>
+                  {formData.XI.act7.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act7.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act8.viñeta"
+                    id="XI-ACT8"
+                    value="◼︎"
+                    checked={formData.XI.act8.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT7" className="pl-2">Blindaje de vehículos  </label>
+                  {formData.XI.act8.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act8.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act9.viñeta"
+                    id="XI-ACT9"
+                    value="◼︎"
+                    checked={formData.XI.act9.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT9" className="pl-2">Comercialización de vehículos, bienes inmuebles, obras de arte o joyas  </label>
+                  {formData.XI.act9.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act9.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act10.viñeta"
+                    id="XI-ACT10"
+                    value="◼︎"
+                    checked={formData.XI.act10.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT10" className="pl-2">Traslado o custodia de valores   </label>
+                  {formData.XI.act10.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act10.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act11.viñeta"
+                    id="XI-ACT11"
+                    value="◼︎"
+                    checked={formData.XI.act11.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT11" className="pl-2">Recepción de donativos    </label>
+                  {formData.XI.act11.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act11.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act12.viñeta"
+                    id="XI-ACT12"
+                    value="◼︎"
+                    checked={formData.XI.act12.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT12" className="pl-2">Prestación de servicios profesionales de manera independiente     </label>
+                  {formData.XI.act12.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act12.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act13.viñeta"
+                    id="XI-ACT13"
+                    value="◼︎"
+                    checked={formData.XI.act13.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT13" className="pl-2">Prestación de servicios de comercio exterior como agente o apoderado aduanal    </label>
+                  {formData.XI.act13.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act13.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act14.viñeta"
+                    id="XI-ACT14"
+                    value="◼︎"
+                    checked={formData.XI.act14.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT14" className="pl-2">Arrendamiento de inmuebles    </label>
+                  {formData.XI.act14.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act14.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act15.viñeta"
+                    id="XI-ACT15"
+                    value="◼︎"
+                    checked={formData.XI.act15.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT15" className="pl-2">Servicios de fe pública (en caso de fedatarios públicos)     </label>
+                  {formData.XI.act15.viñeta == "◼︎" && (
+                    <div>
+                      <label htmlFor="monto1">Importe Mensual: </label>
+                      <input type="text" name="XI.act15.monto" id="monto1" 
+                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
+                        onChange={handleActivities}
+                      />
+                    </div>
+                  )}
+                  
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="checkbox"
+                    name="XI.act16.viñeta"
+                    id="XI-ACT16"
+                    value="◼︎"
+                    checked={formData.XI.act16.viñeta == "◼︎"}
+                    onChange={handleActivities}
+                  />
+                  <label htmlFor="XI-ACT16" className="pl-2">Ninguna     </label>
+                </div>
+              </div>
+            )}
+
+            {pagina == 9 && (
+              <div>
+                <p className="py-2 mb-1">
+                  2.	En caso afirmativo contestar las siguientes preguntas:
+                </p>
+                <div className="mb-3">
+                  <label htmlFor="X4">
+                    (a)	¿Estas actividades se encuentran registradas en el portal del SAT como actividades vulnerables?
+                  </label>
+                  <div>
+                    <input
+                      type="radio"
+                      name="XIIA"
+                      id="XIIA_si"
+                      value="si"
+                      checked={formData.XIIA === "si"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="XIIA_si">Sí</label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="XIIA"
+                      id="XIIA_no"
+                      value="no"
+                      checked={formData.XIIA === "no"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="XIIA_no">No</label>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="X4">
+                    (b)	¿Presenta avisos por dichas actividades en caso de rebasar los umbrales establecidos?
+                  </label>
+                  <div>
+                    <input
+                      type="radio"
+                      name="XIIB"
+                      id="XIIB_si"
+                      value="si"
+                      checked={formData.XIIB === "si"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="XIIB_si">Sí</label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="XIIB"
+                      id="XIIB_no"
+                      value="no"
+                      checked={formData.XIIB === "no"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="XIIB_no">No</label>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="XIIC">
+                    (c)	¿Cuenta con procedimientos diferenciados para identificar clientes y conservar información por cada actividad?
+                  </label>
+                  <div>
+                    <input
+                      type="radio"
+                      name="XIIC"
+                      id="XIIC_si"
+                      value="si"
+                      checked={formData.XIIC === "si"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="XIIC_si">Sí</label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="XIIC"
+                      id="XIIC_no"
+                      value="no"
+                      checked={formData.XIIC === "no"}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="XIIC_no">No</label>
+                  </div>
+                </div>
               </div>
             )}
             
-            {pagina == 7 ? 
-              <div className="flex items-center justify-center mt-3 ">
-                <button type="submit" className="px-3 py-2 rounded-md bg-[#dc2626] text-white/90 cursor-pointer hover:bg-red-700">Enviar Datos</button>
+            {pagina == 10 ? 
+              <div className=" items-center justify-center mt-3 text-center">
+                <p className="py-3 font-semibold">
+                  Esta información será utilizada exclusivamente con 
+                  fines de diagnóstico interno para evaluar su situación frente a la ley antes referida,
+                  por lo que agradecemos su veracidad y completitud.
+                </p>
+                <p className="py-3 font-semibold">
+                  Quedamos atentos a su pronta respuesta y, en caso de requerir aclaraciones o apoyo adicional, 
+                  nos ponemos a su entera disposición.
+                </p>
+                <div className="flex items center justify-center gap-3">
+                  <button type="button" onClick={() => setPagina(pagina - 1)} className="px-3 py-2 rounded-md bg-[#508b4a] text-white/90 cursor-pointer hover:bg-[#5f9b58]">Pagina Anterior</button>
+                  <button type="submit" className="px-3 py-2 rounded-md bg-[#dc2626] text-white/90 cursor-pointer hover:bg-red-700">Enviar Datos</button>
+                </div>
               </div>
               : 
               <div className="flex items-center justify-center mt-3 gap-3">
