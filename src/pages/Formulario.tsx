@@ -224,7 +224,7 @@ export default function Formulario(){
                       type="radio"
                       name="II1"
                       id="I2_si"
-                      value="si"
+                      value="Si"
                       checked={formData.II1 === "si"}
                       onChange={handleChange}
                     />
@@ -236,7 +236,7 @@ export default function Formulario(){
                       type="radio"
                       name="II1"
                       id="I2_no"
-                      value="no"
+                      value="No"
                       checked={formData.II1 === "no"}
                       onChange={handleChange}
                     />
@@ -262,7 +262,7 @@ export default function Formulario(){
                             type="radio"
                             name="II1Op2"
                             id="I2_si"
-                            value="si"
+                            value="Si"
                             checked={formData.II1Op2 === "si"}
                             onChange={handleChange}
                           />
@@ -274,7 +274,7 @@ export default function Formulario(){
                             type="radio"
                             name="II1Op2"
                             id="I2_no"
-                            value="no"
+                            value="No"
                             checked={formData.II1Op2 === "no"}
                             onChange={handleChange}
                           />
@@ -290,7 +290,7 @@ export default function Formulario(){
                               type="radio"
                               name="II1Op3"
                               id="I2_si"
-                              value="si"
+                              value="Si"
                               checked={formData.II1Op3 === "si"}
                               onChange={handleChange}
                             />
@@ -302,7 +302,7 @@ export default function Formulario(){
                               type="radio"
                               name="II1Op3"
                               id="I2_no"
-                              value="no"
+                              value="No"
                               checked={formData.II1Op3 === "no"}
                               onChange={handleChange}
                             />
@@ -328,7 +328,7 @@ export default function Formulario(){
                       type="radio"
                       name="III1"
                       id="III1_si"
-                      value="si"
+                      value="Si"
                       checked={formData.III1 === "si"}
                       onChange={handleChange}
                     />
@@ -340,7 +340,7 @@ export default function Formulario(){
                       type="radio"
                       name="III1"
                       id="III1_no"
-                      value="no"
+                      value="No"
                       checked={formData.III1 === "no"}
                       onChange={handleChange}
                     />
@@ -352,7 +352,7 @@ export default function Formulario(){
                   <label htmlFor="III2">2.¿Conserva copia del contrato, documentación oficial del ente público y datos de los funcionarios responsables?</label>
                   <div>
                     <input type="radio" name="III2" id="III2_si" 
-                      value="si"
+                      value="Si"
                       checked={formData.III2 === "si"}
                       onChange={handleChange}
                     />
@@ -361,7 +361,7 @@ export default function Formulario(){
 
                   <div>
                     <input type="radio" name="III2" id="III2_no" 
-                      value="no"
+                      value="No"
                       checked={formData.III2 === "no"}
                       onChange={handleChange}
                     />
@@ -373,7 +373,7 @@ export default function Formulario(){
                   <label htmlFor="III3">3.¿Identifica si el contrato es financiado con recursos públicos o mixtos?</label>
                   <div>
                     <input type="radio" name="III3" id="III3_si" 
-                      value="si"
+                      value="Si"
                       checked={formData.III3 === "si"}
                       onChange={handleChange}
                     />
@@ -382,7 +382,7 @@ export default function Formulario(){
 
                   <div>
                     <input type="radio" name="III3" id="III3_no" 
-                      value="no"
+                      value="No"
                       checked={formData.III3 === "no"}
                       onChange={handleChange}
                     />
@@ -394,7 +394,7 @@ export default function Formulario(){
                   <label htmlFor="III4">4.¿Tiene expediente de los clientes con los q1ue realiza operaciones?</label>
                   <div>
                     <input type="radio" name="III4" id="III4_si" 
-                      value="si"
+                      value="Si"
                       checked={formData.III4 === "si"}
                       onChange={handleChange}
                     />
@@ -403,7 +403,7 @@ export default function Formulario(){
 
                   <div>
                     <input type="radio" name="III4" id="III4_no" 
-                      value="no"
+                      value="No"
                       checked={formData.III4 === "no"}
                       onChange={handleChange}
                     />
@@ -417,7 +417,7 @@ export default function Formulario(){
                   <label htmlFor="III5">5.¿Realiza operaciones con clientes que entren en la categoría: “PEP’s personas políticamente expuestas”?</label>
                   <div>
                     <input type="radio" name="III5" id="III5_si" 
-                      value="si"
+                      value="Si"
                       checked={formData.III5 === "si"}
                       onChange={handleChange}
                     />
@@ -426,7 +426,7 @@ export default function Formulario(){
 
                   <div>
                     <input type="radio" name="III5" id="III5_no" 
-                      value="no"
+                      value="No"
                       checked={formData.III5 === "no"}
                       onChange={handleChange}
                     />
@@ -456,7 +456,7 @@ export default function Formulario(){
                             type="radio"
                             name="IV1"
                             id="IV1_si"
-                            value="si"
+                            value="Si"
                             checked={formData.IV1 === "si"}
                             onChange={handleChange}
                           />
@@ -468,7 +468,7 @@ export default function Formulario(){
                             type="radio"
                             name="IV1"
                             id="IV1_no"
-                            value="no"
+                            value="No"
                             checked={formData.IV1 === "no"}
                             onChange={handleChange}
                           />
@@ -484,7 +484,7 @@ export default function Formulario(){
                             type="radio"
                             name="IV2"
                             id="IV2_si"
-                            value="si"
+                            value="Si"
                             checked={formData.IV2 === "si"}
                             onChange={handleChange}
                           />
@@ -496,7 +496,7 @@ export default function Formulario(){
                             type="radio"
                             name="IV2"
                             id="IV2_no"
-                            value="no"
+                            value="No"
                             checked={formData.IV2 === "no"}
                             onChange={handleChange}
                           />
@@ -512,7 +512,7 @@ export default function Formulario(){
                             type="radio"
                             name="IV3"
                             id="IV3_si"
-                            value="si"
+                            value="Si"
                             checked={formData.IV3 === "si"}
                             onChange={handleChange}
                           />
@@ -524,7 +524,7 @@ export default function Formulario(){
                             type="radio"
                             name="IV3"
                             id="IV2_no"
-                            value="no"
+                            value="No"
                             checked={formData.IV3 === "no"}
                             onChange={handleChange}
                           />
@@ -543,7 +543,7 @@ export default function Formulario(){
                       type="radio"
                       name="V1"
                       id="V1_si"
-                      value="si"
+                      value="Si"
                       checked={formData.V1 === "si"}
                       onChange={handleChange}
                     />
@@ -555,7 +555,7 @@ export default function Formulario(){
                       type="radio"
                       name="V1"
                       id="V1_no"
-                      value="no"
+                      value="No"
                       checked={formData.V1 === "no"}
                       onChange={handleChange}
                     />
@@ -571,7 +571,7 @@ export default function Formulario(){
                       type="radio"
                       name="V2"
                       id="V2_si"
-                      value="si"
+                      value="Si"
                       checked={formData.V2 === "si"}
                       onChange={handleChange}
                     />
@@ -583,7 +583,7 @@ export default function Formulario(){
                       type="radio"
                       name="V2"
                       id="V2_no"
-                      value="no"
+                      value="No"
                       checked={formData.V2 === "no"}
                       onChange={handleChange}
                     />
@@ -605,7 +605,7 @@ export default function Formulario(){
                       type="radio"
                       name="VI1"
                       id="VI1_si"
-                      value="si"
+                      value="Si"
                       checked={formData.VI1 === "si"}
                       onChange={handleChange}
                     />
@@ -617,7 +617,7 @@ export default function Formulario(){
                       type="radio"
                       name="VI1"
                       id="VI1_NO"
-                      value="no"
+                      value="No"
                       checked={formData.VI1 === "no"}
                       onChange={handleChange}
                     />
@@ -633,7 +633,7 @@ export default function Formulario(){
                       type="radio"
                       name="VI2"
                       id="VI2_si"
-                      value="si"
+                      value="Si"
                       checked={formData.VI2 === "si"}
                       onChange={handleChange}
                     />
@@ -645,7 +645,7 @@ export default function Formulario(){
                       type="radio"
                       name="VI2"
                       id="VI2_NO"
-                      value="no"
+                      value="No"
                       checked={formData.VI2 === "no"}
                       onChange={handleChange}
                     />
@@ -663,7 +663,7 @@ export default function Formulario(){
                       type="radio"
                       name="VII1"
                       id="VII1_si"
-                      value="si"
+                      value="Si"
                       checked={formData.VII1 === "si"}
                       onChange={handleChange}
                     />
@@ -675,7 +675,7 @@ export default function Formulario(){
                       type="radio"
                       name="VII1"
                       id="VII1_NO"
-                      value="no"
+                      value="No"
                       checked={formData.VII1 === "no"}
                       onChange={handleChange}
                     />
@@ -691,7 +691,7 @@ export default function Formulario(){
                       type="radio"
                       name="VII2"
                       id="VII2_si"
-                      value="si"
+                      value="Si"
                       checked={formData.VII2 === "si"}
                       onChange={handleChange}
                     />
@@ -703,7 +703,7 @@ export default function Formulario(){
                       type="radio"
                       name="VII2"
                       id="VII2_NO"
-                      value="no"
+                      value="No"
                       checked={formData.VII2 === "no"}
                       onChange={handleChange}
                     />
@@ -721,7 +721,7 @@ export default function Formulario(){
                       type="radio"
                       name="VIII1"
                       id="VIII1_si"
-                      value="si"
+                      value="Si"
                       checked={formData.VIII1 === "si"}
                       onChange={handleChange}
                     />
@@ -733,7 +733,7 @@ export default function Formulario(){
                       type="radio"
                       name="VIII1"
                       id="VIII1_NO"
-                      value="no"
+                      value="No"
                       checked={formData.VIII1 === "no"}
                       onChange={handleChange}
                     />
@@ -749,7 +749,7 @@ export default function Formulario(){
                       type="radio"
                       name="VIII2"
                       id="VIII2_si"
-                      value="si"
+                      value="Si"
                       checked={formData.VIII2 === "si"}
                       onChange={handleChange}
                     />
@@ -761,7 +761,7 @@ export default function Formulario(){
                       type="radio"
                       name="VIII2"
                       id="VIII2_NO"
-                      value="no"
+                      value="No"
                       checked={formData.VIII2 === "no"}
                       onChange={handleChange}
                     />
@@ -792,7 +792,7 @@ export default function Formulario(){
                       type="radio"
                       name="IX1"
                       id="IX_si"
-                      value="si"
+                      value="Si"
                       checked={formData.IX1 === "si"}
                       onChange={handleChange}
                     />
@@ -804,7 +804,7 @@ export default function Formulario(){
                       type="radio"
                       name="IX1"
                       id="IX1_NO"
-                      value="no"
+                      value="No"
                       checked={formData.IX1 === "no"}
                       onChange={handleChange}
                     />
@@ -820,7 +820,7 @@ export default function Formulario(){
                       type="radio"
                       name="IX2"
                       id="IX2_si"
-                      value="si"
+                      value="Si"
                       checked={formData.IX2 === "si"}
                       onChange={handleChange}
                     />
@@ -832,7 +832,7 @@ export default function Formulario(){
                       type="radio"
                       name="IX2"
                       id="IX2_NO"
-                      value="no"
+                      value="No"
                       checked={formData.IX2 === "no"}
                       onChange={handleChange}
                     />
@@ -867,7 +867,7 @@ export default function Formulario(){
                       type="radio"
                       name="X1"
                       id="X1_si"
-                      value="si"
+                      value="Si"
                       checked={formData.X1 === "si"}
                       onChange={handleChange}
                     />
@@ -879,7 +879,7 @@ export default function Formulario(){
                       type="radio"
                       name="X1"
                       id="X1_no"
-                      value="no"
+                      value="No"
                       checked={formData.X1 === "no"}
                       onChange={handleChange}
                     />
@@ -895,7 +895,7 @@ export default function Formulario(){
                       type="radio"
                       name="X2"
                       id="X2_si"
-                      value="si"
+                      value="Si"
                       checked={formData.X2 === "si"}
                       onChange={handleChange}
                     />
@@ -907,7 +907,7 @@ export default function Formulario(){
                       type="radio"
                       name="X2"
                       id="X2_no"
-                      value="no"
+                      value="No"
                       checked={formData.X2 === "no"}
                       onChange={handleChange}
                     />
@@ -919,7 +919,7 @@ export default function Formulario(){
                       type="radio"
                       name="X2"
                       id="X2_no"
-                      value="no"
+                      value="NA"
                       checked={formData.X2 === "NA"}
                       onChange={handleChange}
                     />
@@ -935,7 +935,7 @@ export default function Formulario(){
                       type="radio"
                       name="X3"
                       id="X3_si"
-                      value="si"
+                      value="Si"
                       checked={formData.X3 === "si"}
                       onChange={handleChange}
                     />
@@ -947,7 +947,7 @@ export default function Formulario(){
                       type="radio"
                       name="X3"
                       id="X3_no"
-                      value="no"
+                      value="No"
                       checked={formData.X3 === "no"}
                       onChange={handleChange}
                     />
@@ -963,7 +963,7 @@ export default function Formulario(){
                       type="radio"
                       name="X4"
                       id="X4_si"
-                      value="si"
+                      value="Si"
                       checked={formData.X4 === "si"}
                       onChange={handleChange}
                     />
@@ -975,7 +975,7 @@ export default function Formulario(){
                       type="radio"
                       name="X4"
                       id="X4_no"
-                      value="no"
+                      value="No"
                       checked={formData.X4 === "no"}
                       onChange={handleChange}
                     />
@@ -991,7 +991,7 @@ export default function Formulario(){
                       type="radio"
                       name="X5"
                       id="X5_si"
-                      value="si"
+                      value="Si"
                       checked={formData.X5 === "si"}
                       onChange={handleChange}
                     />
@@ -1003,7 +1003,7 @@ export default function Formulario(){
                       type="radio"
                       name="X5"
                       id="X5_no"
-                      value="no"
+                      value="No"
                       checked={formData.X5 === "no"}
                       onChange={handleChange}
                     />
@@ -1091,7 +1091,7 @@ export default function Formulario(){
                     checked={formData.XI.act4.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT4" className="pl-2">Desarrollo Inmobiliario </label>
+                  <label htmlFor="XI-ACT5" className="pl-2">Emisión de tarjetas de servicio, crédito, prepago, cupones, devolución y/o recompensas  </label>
                   {formData.XI.act4.viñeta == "◼︎" && (
                     <div>
                       <label htmlFor="monto1">Importe Mensual: </label>
@@ -1112,7 +1112,7 @@ export default function Formulario(){
                     checked={formData.XI.act5.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT5" className="pl-2">Emisión de tarjetas de servicio, crédito, prepago, cupones, devolución y/o recompensas  </label>
+                  <label htmlFor="XI-ACT5" className="pl-2">Emisión de Cheques de viajero  </label>
                   {formData.XI.act5.viñeta == "◼︎" && (
                     <div>
                       <label htmlFor="monto1">Importe Mensual: </label>
@@ -1133,7 +1133,7 @@ export default function Formulario(){
                     checked={formData.XI.act6.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT6" className="pl-2">Emisión de Cheques de viajero  </label>
+                  <label htmlFor="XI-ACT6" className="pl-2">Realización de Mutuos, Prestamos o créditos de alguna índole (Importe mensual)  </label>
                   {formData.XI.act6.viñeta == "◼︎" && (
                     <div>
                       <label htmlFor="monto1">Importe Mensual: </label>
@@ -1154,7 +1154,7 @@ export default function Formulario(){
                     checked={formData.XI.act7.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT7" className="pl-2">Realización de Mutuos, Prestamos o créditos de alguna índole (Importe mensual)  </label>
+                  <label htmlFor="XI-ACT7" className="pl-2">Blindaje de vehículos  </label>
                   {formData.XI.act7.viñeta == "◼︎" && (
                     <div>
                       <label htmlFor="monto1">Importe Mensual: </label>
@@ -1175,7 +1175,7 @@ export default function Formulario(){
                     checked={formData.XI.act8.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT7" className="pl-2">Blindaje de vehículos  </label>
+                  <label htmlFor="XI-ACT8" className="pl-2">Comercialización de vehículos, bienes inmuebles, obras de arte o joyas  </label>
                   {formData.XI.act8.viñeta == "◼︎" && (
                     <div>
                       <label htmlFor="monto1">Importe Mensual: </label>
@@ -1196,7 +1196,7 @@ export default function Formulario(){
                     checked={formData.XI.act9.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT9" className="pl-2">Comercialización de vehículos, bienes inmuebles, obras de arte o joyas  </label>
+                  <label htmlFor="XI-ACT9" className="pl-2">Traslado o custodia de valores   </label>
                   {formData.XI.act9.viñeta == "◼︎" && (
                     <div>
                       <label htmlFor="monto1">Importe Mensual: </label>
@@ -1217,7 +1217,7 @@ export default function Formulario(){
                     checked={formData.XI.act10.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT10" className="pl-2">Traslado o custodia de valores   </label>
+                  <label htmlFor="XI-ACT10" className="pl-2">Recepción de donativos    </label>
                   {formData.XI.act10.viñeta == "◼︎" && (
                     <div>
                       <label htmlFor="monto1">Importe Mensual: </label>
@@ -1238,7 +1238,7 @@ export default function Formulario(){
                     checked={formData.XI.act11.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT11" className="pl-2">Recepción de donativos    </label>
+                  <label htmlFor="XI-ACT11" className="pl-2">Prestación de servicios profesionales de manera independiente     </label>
                   {formData.XI.act11.viñeta == "◼︎" && (
                     <div>
                       <label htmlFor="monto1">Importe Mensual: </label>
@@ -1259,7 +1259,7 @@ export default function Formulario(){
                     checked={formData.XI.act12.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT12" className="pl-2">Prestación de servicios profesionales de manera independiente     </label>
+                  <label htmlFor="XI-ACT13" className="pl-2">Prestación de servicios de comercio exterior como agente o apoderado aduanal    </label>
                   {formData.XI.act12.viñeta == "◼︎" && (
                     <div>
                       <label htmlFor="monto1">Importe Mensual: </label>
@@ -1280,7 +1280,7 @@ export default function Formulario(){
                     checked={formData.XI.act13.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT13" className="pl-2">Prestación de servicios de comercio exterior como agente o apoderado aduanal    </label>
+                  <label htmlFor="XI-ACT14" className="pl-2">Arrendamiento de inmuebles    </label>
                   {formData.XI.act13.viñeta == "◼︎" && (
                     <div>
                       <label htmlFor="monto1">Importe Mensual: </label>
@@ -1301,7 +1301,7 @@ export default function Formulario(){
                     checked={formData.XI.act14.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT14" className="pl-2">Arrendamiento de inmuebles    </label>
+                  <label htmlFor="XI-ACT14" className="pl-2">Servicios de fe pública (en caso de fedatarios públicos)     </label>
                   {formData.XI.act14.viñeta == "◼︎" && (
                     <div>
                       <label htmlFor="monto1">Importe Mensual: </label>
@@ -1322,28 +1322,7 @@ export default function Formulario(){
                     checked={formData.XI.act15.viñeta == "◼︎"}
                     onChange={handleActivities}
                   />
-                  <label htmlFor="XI-ACT15" className="pl-2">Servicios de fe pública (en caso de fedatarios públicos)     </label>
-                  {formData.XI.act15.viñeta == "◼︎" && (
-                    <div>
-                      <label htmlFor="monto1">Importe Mensual: </label>
-                      <input type="text" name="XI.act15.monto" id="monto1" 
-                        className="mt-2 rounded-md bg-white/5 px-4 py-1 text-white border border-white/10 focus:outline-none focus:border-[#dc2626] transition"
-                        onChange={handleActivities}
-                      />
-                    </div>
-                  )}
-                  
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="checkbox"
-                    name="XI.act16.viñeta"
-                    id="XI-ACT16"
-                    value="◼︎"
-                    checked={formData.XI.act16.viñeta == "◼︎"}
-                    onChange={handleActivities}
-                  />
-                  <label htmlFor="XI-ACT16" className="pl-2">Ninguna     </label>
+                  <label htmlFor="XI-ACT15" className="pl-2">Ninguna     </label>
                 </div>
               </div>
             )}
@@ -1362,7 +1341,7 @@ export default function Formulario(){
                       type="radio"
                       name="XIIA"
                       id="XIIA_si"
-                      value="si"
+                      value="Si"
                       checked={formData.XIIA === "si"}
                       onChange={handleChange}
                     />
@@ -1374,7 +1353,7 @@ export default function Formulario(){
                       type="radio"
                       name="XIIA"
                       id="XIIA_no"
-                      value="no"
+                      value="No"
                       checked={formData.XIIA === "no"}
                       onChange={handleChange}
                     />
@@ -1390,7 +1369,7 @@ export default function Formulario(){
                       type="radio"
                       name="XIIB"
                       id="XIIB_si"
-                      value="si"
+                      value="Si"
                       checked={formData.XIIB === "si"}
                       onChange={handleChange}
                     />
@@ -1402,7 +1381,7 @@ export default function Formulario(){
                       type="radio"
                       name="XIIB"
                       id="XIIB_no"
-                      value="no"
+                      value="No"
                       checked={formData.XIIB === "no"}
                       onChange={handleChange}
                     />
@@ -1418,7 +1397,7 @@ export default function Formulario(){
                       type="radio"
                       name="XIIC"
                       id="XIIC_si"
-                      value="si"
+                      value="Si"
                       checked={formData.XIIC === "si"}
                       onChange={handleChange}
                     />
@@ -1430,7 +1409,7 @@ export default function Formulario(){
                       type="radio"
                       name="XIIC"
                       id="XIIC_no"
-                      value="no"
+                      value="No"
                       checked={formData.XIIC === "no"}
                       onChange={handleChange}
                     />
